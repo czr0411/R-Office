@@ -4,34 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 1. 修改這裡：這會變成瀏覽器分頁上顯示的 App 名稱 -->
-    <title>我的專屬自訂 Office</title> 
+    <!-- 1. 修改這裡：瀏覽器分頁上顯示的 App 名稱 -->
+    <title>我的專屬導覽門戶</title> 
 
     <style>
-        /* 移除網頁邊距，讓視窗填滿 */
+        /* 基礎全螢幕與底色 */
         body, html {
-            margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f4f5f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        /* 自訂的頂部導覽列樣式 */
+
+        /* 頂部導覽列 */
         .app-header {
-            height: 50px; background: #2b579a; color: white;
-            display: flex; align-items: center; padding: 0 20px; font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); font-size: 18px;
+            width: 100%;
+            height: 50px;
+            background-color: #2b579a; /* 經典藍色 */
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 16px;
+            box-sizing: border-box;
         }
-        /* LibreOffice WASM 渲染畫布區塊 */
-        #office-canvas {
-            width: 100%; height: calc(100% - 50px); background: #f3f3f3;
+
+        /* 連結按鈕容器 */
+        .link-container {
+            margin-top: 50px;
+            width: 90%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* 按鈕之間的間距 */
+        }
+
+        /* 核心 CSS：將超連結 <a> 標籤美化成漂亮的客製化按鈕 */
+        .custom-link-btn {
+            display: block;
+            padding: 15px 20px;
+            background-color: #ffffff;
+            color: #2b579a;
+            text-decoration: none; /* 移除超連結預設的下底線 */
+            font-weight: 600;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #edebe9;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        /* 當滑鼠懸停在按鈕上時的互動效果（Hover Effect） */
+        .custom-link-btn:hover {
+            background-color: #2b579a;
+            color: #ffffff;
+            transform: translateY(-2px); /* 輕微向上浮動 */
+            box-shadow: 0 4px 12px rgba(43, 87, 154, 0.2);
         }
     </style>
 </head>
 <body>
 
-    <!-- 2. 修改這裡：網頁上方藍色導覽列顯示的 App 名稱 -->
-    <div class="app-header" id="app-title">✨ 我的專屬自訂 Office</div>
+    <!-- 2. 修改這裡：網頁上方導覽列顯示的 App 名稱 -->
+    <div class="app-header">✨ 我的專屬導覽工作區</div>
 
-    <!-- 內嵌開源社群（Allotropia）官方實際維護的 LibreOffice WASM 穩定版網址 -->
-  <iframe id="office-canvas" src="https://docs.google.com/document/u/0/" frameborder="0"></iframe>
+    <!-- 連結按鈕區域 -->
+    <div class="link-container">
+        
+        <!-- 🔗 按鈕 1：連到你的 Google Docs 編輯器 -->
+        <!-- target="_blank" 屬性可以確保點擊時會「開啟新分頁」，不會蓋掉你原本的網頁 -->
+        <a class="custom-link-btn" href="https://google.com" target="_blank">
+            📝 Open Docs
+        </a>
+
+        <!-- 🔗 按鈕 2：可以更換成你自己的 GitHub 專案首頁 -->
+        <a class="custom-link-btn" href="https://github.com" target="_blank">
+            💻 開啟我的 GitHub 儲存庫
+        </a>
+
+        <!-- 🔗 按鈕 3：可以自由更換成任何你常去的外部網站 -->
+        <a class="custom-link-btn" href="https://google.com" target="_blank">
+            🔍 前往 Google 搜尋首頁
+        </a>
+
+    </div>
 
 </body>
 </html>
