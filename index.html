@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 1. 修改這裡：這會變成跳轉前，瀏覽器分頁極短暫顯示的 App 名稱 -->
+    <title>NTPC R-Office</title> 
+
+    <script>
+        // 「進就轉」核心邏輯：網頁一打開，直接把網址替換為新北市教育局協作平台
+        // 使用 window.location.replace 可以防止使用者點「回上一頁」時卡在死循環
+        window.location.replace("https://sites.google.com/apps.ntpc.edu.tw/r-office/home");
+    </script>
+</head>
+<body>
+    <!-- 如果使用者網路或裝置較慢，跳轉前會短暫看到此提示 -->
+    <p style="font-family: -apple-system, BlinkMacSystemFont, sans-serif; text-align: center; margin-top: 60px; color: #666; font-size: 15px;">
+        正在自動跳轉至NTPC R-Office，請稍候...
+    </p>
+</body>
+</html>
